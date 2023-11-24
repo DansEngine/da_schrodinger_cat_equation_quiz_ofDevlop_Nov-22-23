@@ -8,4 +8,5 @@ void SplashScreen () {
   - splashScreen
   */
   background (255);
+  splashST ();
 } //END SplashScreen

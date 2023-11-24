@@ -5,6 +5,7 @@
 //Global variable
 int appWidth, appHeight, smallerDimension;
 Boolean OS_On=false;
+float ssSpaceBarX, ssSpaceBarY, ssSpaceBarW, ssSpaceBarH;
 //
 void setup () {
   fullScreen ();
@@ -13,7 +14,8 @@ void setup () {
   appHeight = displayHeight;
   //
   DisplayAlgorithm ();
-  
+  //
+  //Font type
   //
   //Display algorithm
   smallerDimension = ( appWidth >= appHeight ) ? appHeight : appWidth ; //ternary operator
@@ -44,21 +46,40 @@ void setup () {
   //           Hint: "something..."
   //END Display Orientation
   //
+  //Population
+  float centerX=appWidth*1/2, centerY=appHeight*1/2;
+  ssSpaceBarW = appWidth*1/2;
+  ssSpaceBarH = appHeight*1/10;
+  ssSpaceBarX = centerX - ssSpaceBarW*1/2;
+  ssSpaceBarY = centerY - ssSpaceBarH*1/2;
+  //
+  //DIVs
+  rect ( ssSpaceBarX, ssSpaceBarY, ssSpaceBarW, ssSpaceBarH );
+  if (OS_On==false) textSetup ();
+  //
 }// END
 //
 void draw () {
+  /*
   if ( OS_On == true ) {
     SplashScreen ();
+    splashST ();
   } else if ( OS_On == false) {
     background (0);
-  };
+  };*/
+  if ( OS_On == true ) {
+    SplashScreen ();
+  }
 }// END OF END
 //
 void mousePressed () {
+  if ( OS_On == false ) OS_On = true;
+  /*
   if ( OS_On == false ) {OS_On = true;
   } else {
   OS_On = false;
   }
+  */
 }// END OF END OF END
 //
 void keyPressed () { 
