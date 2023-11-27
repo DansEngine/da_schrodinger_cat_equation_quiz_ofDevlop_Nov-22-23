@@ -3,8 +3,9 @@
 */
 //
 //Global variable
-int appWidth, appHeight, smallerDimension;
-Boolean OS_On=false;
+int appWidth, appHeight, smallerDimension, white;
+Boolean OS_On=false, programS=false;
+color resetColour= white =#FFFFFF;
 float ssSpaceBarX, ssSpaceBarY, ssSpaceBarW, ssSpaceBarH;
 //
 void setup () {
@@ -46,12 +47,7 @@ void setup () {
   //           Hint: "something..."
   //END Display Orientation
   //
-  //Population
-  float centerX=appWidth*1/2, centerY=appHeight*1/2;
-  ssSpaceBarW = appWidth*1/2;
-  ssSpaceBarH = appHeight*1/10;
-  ssSpaceBarX = centerX - ssSpaceBarW*1/2;
-  ssSpaceBarY = centerY - ssSpaceBarH*1/2;
+  Population ();
   //
   //DIVs
   rect ( ssSpaceBarX, ssSpaceBarY, ssSpaceBarW, ssSpaceBarH );
@@ -67,13 +63,16 @@ void draw () {
   } else if ( OS_On == false) {
     background (0);
   };*/
-  if ( OS_On == true ) {
+  if ( OS_On == true && programS == false ) {
     SplashScreen ();
+  }
+  if ( OS_On == true && programS == true ) {
+    homeScreen ();
   }
 }// END OF END
 //
 void mousePressed () {
-  if ( OS_On == false ) OS_On = true;
+  if ( mouseX > ssSpaceBarX && mouseX < ssSpaceBarX + ssSpaceBarW && mouseY > ssSpaceBarY && mouseY < ssSpaceBarY + ssSpaceBarH ) OS_On = true;
   /*
   if ( OS_On == false ) {OS_On = true;
   } else {
@@ -83,6 +82,10 @@ void mousePressed () {
 }// END OF END OF END
 //
 void keyPressed () { 
+  if (key==' ') programS = true;
+  //if ();
+  if (key==CODED || keyCode==ESC) exit();
+  if (key=='q' || key=='Q') exit();
 }// END OF END OF END OF END
 //
 // END OF END OF END OF END OF END OF Program

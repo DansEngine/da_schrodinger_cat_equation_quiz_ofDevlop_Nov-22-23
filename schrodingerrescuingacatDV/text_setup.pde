@@ -15,7 +15,7 @@ void textSetup () {
 } //END TEXT
 //
 void splashST () {
-  String e="get flash bang ;)";
+  String e="get flash bang ;), space to continues";
   fill(cyan);
   textFont (Calisto,55);
   textAlign (CENTER, CENTER);
