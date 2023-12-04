@@ -2,12 +2,11 @@
 int BGX, BGY, BGW, BGH;
 PImage BGI;
 //
-int open = '../';
-int files = 'whyimage/';
-int choose = 'land/';
-int choose2 = 'port/';
-int choose3 = 'sq/';
-BGI = loadImage (open + files + choose + "ROG_STRIX_product_wallpaper_1920x1200.jpg");
+  String open = "../";
+  String pathway = "whyimage/";
+  String choose = "land/";
+  String choose2 = "port/";
+  String choose3 = "sq/";
 void BGrect () {
   background (0);
   noStroke();
@@ -19,6 +18,7 @@ void BGrect () {
 void BGimage () {
   BGrect ();
   //Tint Code ; brightness, night mode
+  BGI = loadImage (open + pathway + choose +"sddefault.jpg");
   image ( BGI, BGX, BGY, BGW, BGH);
 } // End home screen
 //
